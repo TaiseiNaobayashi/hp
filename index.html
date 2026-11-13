@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>直林大生 (Taisei Naobayashi) | 代謝工学・CO2資化技術</title>
+<meta name="description" content="直林大生（なおばやし たいせい / Taisei Naobayashi）のホームページ。東京農工大学 大学院 工学府 生命工学専攻／京都大学 大学院薬学研究科 薬品機能解析学分野。CO2資化大腸菌の代謝工学により、CO2からのバイオものづくりを研究しています。Taisei Naobayashi, metabolic engineering of E. coli for CO2 utilization.">
+<meta name="author" content="直林大生 (Taisei Naobayashi)">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://taiseinaobayashi.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="直林大生 (Taisei Naobayashi)">
+<meta property="og:description" content="CO2資化技術にパラダイムシフトを起こす。東京農工大学 大学院 工学府 生命工学専攻／京都大学 大学院薬学研究科 薬品機能解析学分野。代謝工学・還元的グリシン経路・メタボロミクス。">
+<meta property="og:url" content="https://taiseinaobayashi.github.io/">
+<meta property="profile:first_name" content="Taisei">
+<meta property="profile:last_name" content="Naobayashi">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23A8B7CC'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Shippori+Mincho+B1:wght@400;600;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "直林大生",
+  "alternateName": ["Taisei Naobayashi", "なおばやし たいせい", "直林 大生", "Naobayashi Taisei"],
+  "givenName": "Taisei",
+  "familyName": "Naobayashi",
+  "url": "https://taiseinaobayashi.github.io/",
+  "description": "CO2資化大腸菌の代謝工学により、CO2からのバイオものづくりを目指す研究者",
+  "jobTitle": "修士課程1年",
+  "knowsAbout": ["代謝工学", "Metabolic engineering", "CO2資化技術", "CO2 assimilation", "CO2資源化", "CO2 utilization", "還元的グリシン経路", "Reductive glycine pathway", "合成生物学", "Synthetic biology", "メタボロミクス", "Metabolomics", "大腸菌", "Escherichia coli"],
+  "affiliation": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "東京農工大学 大学院 工学府 生命工学専攻（修士1年）",
+      "alternateName": "Tokyo University of Agriculture and Technology"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "京都大学 大学院薬学研究科 薬品機能解析学分野",
+      "alternateName": "Graduate School of Pharmaceutical Sciences, Kyoto University"
+    },
+    {
+      "@type": "Organization",
+      "name": "Systems Omics Lab",
+      "url": "https://systemsomicslab.github.io/"
+    }
+  ],
+  "sameAs": [
+    "https://github.com/TaiseiNaobayashi",
+    "https://scholar.google.com/citations?user=XrrVRmEAAAAJ",
+    "https://orcid.org/0009-0009-7755-163X",
+    "https://www.researchgate.net/profile/Taisei-Naobayashi",
+    "https://systemsomicslab.github.io/member/"
+  ]
+}
+</script>
+<style>
+:root {
+  box-sizing: border-box;
+  --paper: #FFFFFF;
+  --ink: #14171B;
+  --muted: #727C88;
+  --faint: #9BA5B1;
+  --hair: #DCE1E7;
+  --mist-deep: #93A5BD;
+  --mist-mid: #C6D1DF;
+  --mist-pale: #EAEFF5;
+  --accent: #4E6C90;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "EB Garamond", "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 1rem;
+  line-height: 2.05;
+  overflow-x: hidden;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.wrap { max-width: 56rem; margin: 0 auto; padding: 0 1.4rem; }
+
+/* ── 上部の細いバー ── */
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.3rem 1.4rem 1.1rem;
+  font-size: .86rem;
+  letter-spacing: .02em;
+}
+.topbar .mark { color: var(--muted); }
+
+/* ── ヒーロー ── */
+.hero {
+  position: relative;
+  margin: 0 1.4rem;
+  height: 76svh;
+  min-height: 26rem;
+  background: linear-gradient(168deg, #93A5BD 0%, #AEBCCE 34%, #CDD7E3 62%, #E9EEF4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-text {
+  writing-mode: vertical-rl;
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-size: clamp(1.35rem, 5.4vw, 2.1rem);
+  letter-spacing: .22em;
+  line-height: 1.75;
+  margin: 0;
+  max-height: 84%;
+}
+.hero-en {
+  position: absolute;
+  left: 1.3rem; bottom: 1.4rem;
+  writing-mode: vertical-rl;
+  color: rgba(255,255,255,.82);
+  font-size: .64rem;
+  letter-spacing: .28em;
+  margin: 0;
+}
+
+/* ── 名前 ── */
+.namecard { padding: 5.5rem 0 0; display: grid; gap: 2.4rem; }
+.portrait { margin: 0; width: 10rem; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; background: var(--mist-pale); }
+@media (min-width: 42rem) {
+  .namecard { grid-template-columns: 1fr auto; align-items: end; gap: 3rem; }
+  .portrait { width: 13rem; }
+}
+h1 {
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 11.5vw, 4rem);
+  letter-spacing: .14em;
+  line-height: 1.3;
+  margin: 0;
+}
+.romaji { font-size: 1rem; letter-spacing: .2em; color: var(--muted); margin: .5rem 0 0; }
+.kana { font-size: .8rem; letter-spacing: .16em; color: var(--faint); margin: .15rem 0 0; font-family: "Shippori Mincho B1", serif; }
+.affil { color: var(--muted); font-size: .92rem; margin: 1.5rem 0 0; line-height: 1.95; }
+.affil a { color: var(--muted); }
+
+/* ── 縦書き見出し ── */
+.rule { border: 0; border-top: 1px solid var(--ink); margin: 5.5rem 0 0; }
+.vhead {
+  display: flex; justify-content: flex-start; align-items: flex-start;
+  gap: .9rem;
+  padding: 2.2rem 0 2.6rem;
+}
+.vlabel {
+  writing-mode: vertical-rl;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  color: var(--muted);
+  margin-top: .2rem;
+}
+.vtitle {
+  writing-mode: vertical-rl;
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 5.6vw, 1.9rem);
+  letter-spacing: .2em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── 本文 ── */
+p { margin: 0 0 1.5rem; }
+p:last-child { margin-bottom: 0; }
+.lead {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: clamp(1.15rem, 4.7vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.85;
+  letter-spacing: .04em;
+  margin-bottom: 2.2rem;
+}
+.body { max-width: 38rem; font-size: .98rem; letter-spacing: .01em; }
+strong { font-weight: 600; color: var(--accent); }
+em { font-style: italic; }
+sub { font-size: .72em; }
+.en { color: var(--muted); font-size: .92rem; line-height: 1.95; border-top: 1px solid var(--hair); padding-top: 1.7rem; margin-top: 2.4rem; }
+
+/* ── 一覧（左にタイトル、右に区分） ── */
+ul.entries { list-style: none; margin: 0; padding: 0; }
+ul.entries li {
+  display: flex; align-items: baseline; gap: 1.2rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+ul.entries li:first-child { border-top: 1px solid var(--hair); }
+.entry { flex: 1; min-width: 0; }
+.entry-title { font-size: 1.02rem; line-height: 1.7; }
+.meta { display: block; color: var(--muted); font-size: .8rem; line-height: 1.8; margin-top: .3rem; }
+.role { flex: none; color: var(--muted); font-size: .8rem; letter-spacing: .04em; white-space: nowrap; }
+.note { color: var(--faint); font-size: .76rem; }
+.meta sup { font-size: .72em; }
+
+/* ── 研究スキル ── */
+.skillgrid { display: grid; grid-template-columns: 1fr; gap: 0; border-bottom: 1px solid var(--hair); }
+.skillcard { display: flex; align-items: flex-start; gap: 1.3rem; padding: 1.7rem .1rem; border-top: 1px solid var(--hair); }
+.skillicon { flex: none; width: 3.1rem; height: 3.1rem; fill: none; stroke: var(--mist-deep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.skillicon .acc { stroke: var(--accent); }
+.skillicon .gene { stroke-width: 3.6; stroke-linecap: round; }
+.skillicon .node { fill: var(--mist-deep); stroke: none; }
+.skillicon .node.acc-fill { fill: var(--accent); }
+.skillcard h3 { margin: 0; font-size: 1.02rem; font-weight: 400; line-height: 1.7; letter-spacing: .01em; }
+.skillcard .cat { color: var(--muted); font-size: .8rem; letter-spacing: .08em; margin: .35rem 0 0; }
+@media (min-width: 46rem) {
+  .skillgrid { grid-template-columns: 1fr 1fr; column-gap: 2.6rem; }
+}
+
+/* ── リンク（アイコン） ── */
+.links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1.6rem 2.2rem; }
+.links a {
+  display: flex; flex-direction: column; align-items: center; gap: .55rem;
+  text-decoration: none; color: var(--ink);
+}
+.links svg { width: 2.1rem; height: 2.1rem; fill: currentColor; }
+.links .lbl { color: var(--muted); font-size: .7rem; letter-spacing: .06em; line-height: 1; }
+.links a:hover, .links a:hover .lbl { color: var(--accent); }
+
+a { color: var(--ink); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+.todo { background: var(--mist-pale); color: var(--accent); padding: 0 .3em; }
+
+.caption { color: var(--muted); font-size: .86rem; margin: 2.2rem 0 0; max-width: 32rem; }
+
+/* ── 研究の図 ── */
+.figure-wide { margin: 3rem 0 0; }
+.figure-wide img { display: block; width: 100%; height: auto; border: 1px solid var(--hair); }
+.figure-wide figcaption { color: var(--muted); font-size: .86rem; line-height: 1.95; margin: 1.1rem 0 0; max-width: 38rem; }
+.figure-wide .zoom { color: var(--faint); font-size: .76rem; letter-spacing: .04em; }
+@media (max-width: 42rem) {
+  .figure-wide { margin-inline: -1.4rem; }
+  .figure-wide img { border-inline: 0; }
+  .figure-wide figcaption { padding-inline: 1.4rem; }
+}
+
+/* ── eBio システム図 ── */
+.ebio { margin: 3rem 0 0; padding: 0; }
+.ebio-wrap { overflow-x: auto; }
+.ebio svg { display: block; width: 100%; min-width: 40rem; height: auto; }
+.ebio figcaption { color: var(--muted); font-size: .86rem; line-height: 1.95; margin: 1.5rem 0 0; max-width: 36rem; }
+.ebio text { font-family: "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif; }
+.ebio .e-panel { fill: url(#eBg); }
+.ebio .e-title { fill: #EAF2FB; font-size: 25px; font-weight: 600; letter-spacing: .05em; }
+.ebio .e-kicker { fill: #8DA5C4; font-size: 15px; letter-spacing: .12em; }
+.ebio .e-label { fill: #DCE7F4; font-size: 17px; letter-spacing: .04em; text-anchor: middle; }
+.ebio .e-num { fill: #6B83A6; font-size: 13px; letter-spacing: .22em; text-anchor: middle; }
+.ebio .e-mol { fill: #C3D9EE; font-size: 16px; letter-spacing: .04em; text-anchor: middle; }
+.ebio .e-mol.sm { font-size: 13px; }
+.ebio .e-mol.xs { font-size: 9px; }
+.ebio .e-mol.accent { fill: #7FEAF6; }
+.ebio .e-tiny { fill: #8DA5C4; font-size: 13px; text-anchor: middle; }
+.ebio .e-tiny-l { fill: #8DA5C4; font-size: 13px; }
+.ebio .e-ln > * { fill: none; stroke: #9FB6D2; stroke-width: 1.8; stroke-linejoin: round; }
+.ebio .e-win rect { fill: rgba(255,255,255,.12); }
+.ebio .e-smoke circle { fill: rgba(255,255,255,.1); }
+.ebio .e-tube { fill: none; stroke: #7E97B8; stroke-width: 2; stroke-linecap: round; }
+.ebio .e-cell2 { fill: rgba(111,227,242,.1); stroke: #6FE3F2; stroke-width: 1.8; }
+.ebio .e-dot { fill: #6FE3F2; }
+.ebio .e-sun { fill: url(#eSun); }
+.ebio .e-ray path { stroke: #F0C274; stroke-width: 2; stroke-linecap: round; }
+.ebio .e-pv { fill: rgba(127,168,220,.16); stroke: #7FA8DC; stroke-width: 1.6; stroke-linejoin: round; }
+.ebio .e-pv-line path { fill: none; stroke: #7FA8DC; stroke-width: 1.2; opacity: .65; }
+.ebio .e-wire { fill: none; stroke: #F0C274; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ebio .e-bolt { fill: #F0C274; }
+.ebio .e-box, .ebio .e-tank { fill: rgba(255,255,255,.035); stroke: #5C7FA8; stroke-width: 1.8; }
+.ebio .e-liquid { fill: rgba(111,227,242,.10); }
+.ebio .e-co2 { fill: rgba(255,255,255,.06); stroke: #9FB6D2; stroke-width: 1.5; }
+.ebio .e-bub circle { fill: rgba(255,255,255,.45); }
+.ebio .e-flow { fill: none; stroke: #6FE3F2; stroke-width: 2; stroke-linecap: round; opacity: .85; }
+.ebio .e-cell { fill: rgba(111,227,242,.07); stroke: #6FE3F2; stroke-width: 2; }
+.ebio .e-cell-in { fill: none; stroke: rgba(111,227,242,.3); stroke-width: 1.2; }
+.ebio .e-cycle { fill: none; stroke: #9FD4E8; stroke-width: 1.6; stroke-dasharray: 4 5; }
+.ebio .e-cycle-arrow { fill: none; stroke: #9FD4E8; stroke-width: 1.8; }
+.ebio .e-node circle { fill: #6FE3F2; }
+.ebio .e-prod { fill: none; stroke: #DCE7F4; stroke-width: 1.8; stroke-linejoin: round; }
+.ebio .e-prod.e-fill { fill: rgba(111,227,242,.18); }
+.ebio .e-spark path { fill: #6FE3F2; opacity: .75; }
+.ebio .e-hint { display: none; }
+@media (max-width: 42rem) { .ebio .e-hint { display: inline; color: var(--faint); } }
+
+footer {
+  margin-top: 6rem;
+  padding: 1.6rem 0 2rem;
+  border-top: 1px solid var(--ink);
+  display: flex; justify-content: space-between;
+  color: var(--muted); font-size: .78rem; letter-spacing: .04em;
+}
+
+/* ── 日英切り替え ── */
+html:not(.en) .en-only { display: none !important; }
+html.en .ja-only { display: none !important; }
+.langswitch { display: flex; align-items: baseline; gap: .5rem; font-size: .82rem; letter-spacing: .03em; }
+.langswitch button {
+  appearance: none; background: none; border: 0; padding: 0;
+  font-family: inherit; font-size: inherit; letter-spacing: inherit;
+  color: var(--faint); cursor: pointer;
+}
+.langswitch button[aria-pressed="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: .25em; }
+.langswitch span { color: var(--hair); }
+.hhead { padding: 2.2rem 0 2.4rem; }
+.hhead h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  letter-spacing: .04em;
+  margin: 0;
+}
+.hero-text.en {
+  writing-mode: horizontal-tb;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 6.4vw, 2.5rem);
+  letter-spacing: .02em;
+  line-height: 1.45;
+  text-align: center;
+  max-width: 85%;
+  max-height: none;
+}
+.hero-en.ja-sub { left: auto; right: 1.3rem; }
+html.en body { line-height: 1.95; }
+html.en h1 { font-family: "EB Garamond", serif; font-weight: 500; letter-spacing: .03em; font-size: clamp(2.2rem, 10vw, 3.6rem); }
+html.en .lead { font-family: "EB Garamond", serif; font-weight: 500; letter-spacing: .01em; }
+</style></head>
+<body>
+
+<div class="topbar">
+  <span>Scroll to explore</span>
+  <div class="langswitch">
+    <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+    <span>/</span>
+    <button type="button" data-lang="en" aria-pressed="false">English</button>
+  </div>
+</div>
+
+<header class="hero">
+  <p class="hero-text ja-only">CO₂資化技術に<br>パラダイムシフトを起こす</p>
+  <p class="hero-text en en-only">A paradigm shift<br>in CO₂ assimilation</p>
+  <p class="hero-en ja-only">A PARADIGM SHIFT IN CO₂ ASSIMILATION</p>
+  <p class="hero-en ja-sub en-only">CO₂資化技術にパラダイムシフトを起こす</p>
+</header>
+
+<div class="wrap">
+
+  <div class="namecard">
+    <div>
+    <h1 class="ja-only">直林大生</h1>
+    <h1 class="en-only">Taisei Naobayashi</h1>
+    <p class="romaji ja-only">Taisei Naobayashi</p>
+    <p class="romaji en-only">直林大生</p>
+    <p class="kana ja-only">なおばやし たいせい</p>
+    <p class="affil ja-only">
+      東京農工大学 大学院 工学府 生命工学専攻 修士1年<br>
+      京都大学 大学院薬学研究科 薬品機能解析学分野 津川裕司研究室 所属<br>
+      <a href="https://systemsomicslab.github.io/">Systems Omics Lab</a>
+    </p>
+    <p class="affil en-only" lang="en">
+      M1, Department of Biotechnology and Life Science,<br>Graduate School of Engineering,<br>Tokyo University of Agriculture and Technology<br>
+      Laboratory of Pharmaceutical Function Analysis (Tsugawa Lab),<br>Graduate School of Pharmaceutical Sciences,<br>Kyoto University<br>
+      <a href="https://systemsomicslab.github.io/">Systems Omics Lab</a>
+    </p>
+    </div>
+    <figure class="portrait">
+      <img src="images/profile.jpg" alt="直林大生 Taisei Naobayashi" width="760" height="1013" loading="lazy">
+    </figure>
+  </div>
+
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Research</span><h2 class="vtitle">研究内容</h2></div>
+  <div class="hhead en-only"><h2>Research</h2></div>
+
+  <div class="body ja-only">
+    <p class="lead">排気CO<sub>2</sub>からダイレクト変換を可能にする<br>バイオ生産プラットフォームの構築</p>
+    <p>カーボンニュートラルの実現には、CO<sub>2</sub>を「排出するもの」から「使える資源」へ変える技術が必要です。再生可能エネルギーを使う電気化学的CO<sub>2</sub>還元は有望ですが、つくれる分子はギ酸などごく単純なものに限られます。一方で微生物は多様な化学品を選択的につくれるのに、その原料は糖などの有機資源に依存したままです。</p>
+    <p>そこで私は、この二つをつなぎます。<strong>ギ酸を食べて育つ大腸菌</strong>を<strong>還元的グリシン経路（RGP）</strong>の導入によって設計し、電気培養と組み合わせることで、<strong>CO<sub>2</sub>のみで生育する大腸菌</strong>の開発に成功しました。</p>
+    <p>RGPは天然の炭素固定経路よりもエネルギー効率に優れ、世界中で開発が進む経路です。研究の焦点はすでに「経路をつくる」段階から、「性能を高めて実用的な物質生産につなげる」段階へ移りつつあります。私はLC-MS/MSによるメタボロミクスと代謝フラックス解析でボトルネックを突き止め、代謝・遺伝子・酵素の改変によって性能を引き上げることで、CO<sub>2</sub>から燃料や化学品をつくるプラットフォームの実現を目指しています。</p>
+  </div>
+
+  <div class="body en-only" lang="en">
+    <p class="lead">Building a bioproduction platform<br>for direct conversion of exhaust CO<sub>2</sub></p>
+    <p>Carbon neutrality asks us to treat CO<sub>2</sub> not as waste but as a resource. Electrochemical CO<sub>2</sub> reduction, powered by renewable electricity, is a promising way to do that — yet the molecules it yields are simple ones such as formate. Microbes, meanwhile, can build a wide variety of chemicals with great selectivity, but they still run on sugars and other organic feedstocks.</p>
+    <p>My work joins the two. By installing the <strong>reductive glycine pathway (RGP)</strong>, I designed <strong><em>E. coli</em> that feeds on formate</strong>, and combined it with electro-cultivation to obtain <strong><em>E. coli</em> that grows on CO<sub>2</sub> alone</strong>.</p>
+    <p>The RGP is more energy-efficient than natural carbon fixation pathways, and laboratories worldwide are now developing it. The field has already moved on from building such a pathway to raising its performance far enough for real production. I use LC-MS/MS metabolomics and metabolic flux analysis to find the bottlenecks, then lift performance through metabolic, genetic and enzyme engineering — towards a platform that makes fuels and chemicals out of CO<sub>2</sub>.</p>
+  </div>
+
+  <figure class="figure-wide">
+    <a href="images/research-overview.png" target="_blank" rel="noopener noreferrer">
+      <img src="images/research-overview.png" alt="ギ酸資化大腸菌の構築、ボトルネックの特定と代謝最適化、CO₂を原料とするバイオ生産プラットフォーム（eBioシステム）の確立までの研究の流れ" width="1536" height="857" loading="lazy">
+    </a>
+    <figcaption class="ja-only">ギ酸資化大腸菌をつくり、ボトルネックを見つけて代謝を最適化し、電気化学触媒と組み合わせてCO<sub>2</sub>からのバイオ生産プラットフォームへ。<span class="zoom">（図をクリックで拡大）</span></figcaption>
+    <figcaption class="en-only" lang="en">Building formatotrophic <em>E. coli</em>, identifying bottlenecks and optimising metabolism, then coupling it with an electrochemical catalyst into a CO<sub>2</sub>-based bioproduction platform. <span class="zoom">(click to enlarge)</span></figcaption>
+  </figure>
+
+  <figure class="ebio">
+    <div class="ebio-wrap">
+      <svg viewBox="0 0 1000 460" role="img" aria-labelledby="ebioTitle ebioDesc" xmlns="http://www.w3.org/2000/svg">
+        <title id="ebioTitle">eBio system</title>
+        <desc id="ebioDesc">工場や自動車から排出されたCO₂を、再生可能エネルギーの電力でギ酸へ還元し、同じジャーファーメンターの中で還元的グリシン経路をもつ改変大腸菌がそのギ酸から燃料や化学品をつくる、eBioシステムの構成図。</desc>
+        <defs>
+          <linearGradient id="eBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0A1220"/>
+            <stop offset=".55" stop-color="#13243F"/>
+            <stop offset="1" stop-color="#1C3354"/>
+          </linearGradient>
+          <radialGradient id="eSun" cx=".4" cy=".35" r=".8">
+            <stop offset="0" stop-color="#FFF1D6"/>
+            <stop offset="1" stop-color="#EFBC62"/>
+          </radialGradient>
+          <linearGradient id="eCat" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8FF0FB"/>
+            <stop offset="1" stop-color="#2C7B95"/>
+          </linearGradient>
+          <linearGradient id="eAno" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#AFC7E4"/>
+            <stop offset="1" stop-color="#506E96"/>
+          </linearGradient>
+          <pattern id="eGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M50 0 V50 M0 50 H50" fill="none" stroke="#FFFFFF" stroke-opacity=".05" stroke-width="1"/>
+          </pattern>
+          <filter id="eGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="6" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <marker id="eArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 .5 L10 5 L0 9.5 z" fill="#6FE3F2"/>
+          </marker>
+        </defs>
+
+        <rect class="e-panel" x="0" y="0" width="1000" height="460" rx="18"/>
+        <rect x="0" y="0" width="1000" height="460" rx="18" fill="url(#eGrid)"/>
+
+        <circle class="e-dot" cx="42" cy="42" r="5" filter="url(#eGlow)"/>
+        <text x="58" y="49" class="e-title">eBio system</text>
+        <text x="962" y="47" class="e-kicker ja-only" text-anchor="end">CO₂ → 燃料・化学品</text>
+        <text x="962" y="47" class="e-kicker en-only" text-anchor="end">CO₂ to fuels and chemicals</text>
+
+        <!-- 再生可能エネルギー -->
+        <circle class="e-sun" cx="430" cy="74" r="15" filter="url(#eGlow)"/>
+        <g class="e-ray">
+          <path d="M430 48 V40"/><path d="M430 100 V108"/>
+          <path d="M404 74 H396"/><path d="M456 74 H464"/>
+          <path d="M412 56 L406 50"/><path d="M448 92 L454 98"/>
+          <path d="M448 56 L454 50"/><path d="M412 92 L406 98"/>
+        </g>
+        <path class="e-wire" d="M447 74 H466"/>
+        <rect class="e-box" x="466" y="56" width="62" height="36" rx="12"/>
+        <path class="e-bolt" d="M500 62 l-10 16 h7 l-4 13 l12 -18 h-7 z"/>
+        <text x="542" y="79" class="e-tiny-l ja-only">再生可能エネルギー</text>
+        <text x="542" y="79" class="e-tiny-l en-only">Renewable energy</text>
+        <path class="e-wire" d="M480 92 V112"/>
+        <path class="e-wire" d="M514 92 V112"/>
+
+        <!-- 01 排出されたCO₂：工場と自動車 -->
+        <g class="e-ln">
+          <rect x="52" y="212" width="104" height="58" rx="6"/>
+          <rect x="70" y="170" width="16" height="44" rx="3"/>
+          <rect x="100" y="158" width="16" height="56" rx="3"/>
+          <path d="M168 270 v-12 a6 6 0 0 1 6 -6 h8 l10 -14 h26 l10 14 h6 a6 6 0 0 1 6 6 v12 z"/>
+          <circle cx="186" cy="270" r="6"/>
+          <circle cx="222" cy="270" r="6"/>
+        </g>
+        <g class="e-win">
+          <rect x="66" y="232" width="16" height="16" rx="2"/>
+          <rect x="90" y="232" width="16" height="16" rx="2"/>
+          <rect x="114" y="232" width="16" height="16" rx="2"/>
+        </g>
+        <g class="e-smoke">
+          <circle cx="78" cy="152" r="8"/>
+          <circle cx="108" cy="136" r="10"/>
+          <circle cx="92" cy="122" r="7"/>
+        </g>
+        <circle class="e-co2" cx="150" cy="126" r="17"/>
+        <text x="150" y="131" class="e-mol sm">CO₂</text>
+        <circle class="e-co2" cx="192" cy="94" r="12"/>
+        <text x="192" y="98" class="e-mol xs">CO₂</text>
+
+        <path class="e-flow" d="M214 124 H316" marker-end="url(#eArrow)"/>
+
+        <!-- 02 eBio ジャーファーメンター -->
+        <rect class="e-box" x="326" y="112" width="358" height="24" rx="8"/>
+        <rect class="e-tank" x="332" y="136" width="346" height="206" rx="20"/>
+        <rect class="e-liquid" x="338" y="192" width="334" height="144" rx="16"/>
+
+        <path class="e-wire" d="M480 136 V154 H400 V170"/>
+        <path class="e-wire" d="M514 136 V154 H610 V170"/>
+        <rect x="393" y="170" width="14" height="150" rx="7" fill="url(#eCat)"/>
+        <rect x="603" y="170" width="14" height="150" rx="7" fill="url(#eAno)"/>
+        <text x="374" y="202" class="e-tiny">e⁻</text>
+
+        <path class="e-tube" d="M352 136 V300"/>
+        <g class="e-bub">
+          <circle cx="352" cy="286" r="3.5"/><circle cx="359" cy="262" r="3"/>
+          <circle cx="349" cy="238" r="3.5"/><circle cx="357" cy="214" r="3"/>
+          <circle cx="382" cy="222" r="4"/><circle cx="386" cy="256" r="3"/>
+          <circle cx="380" cy="290" r="3.5"/>
+          <circle cx="628" cy="228" r="3.5"/><circle cx="624" cy="262" r="3"/>
+          <circle cx="630" cy="294" r="3"/>
+        </g>
+
+        <g filter="url(#eGlow)">
+          <rect class="e-cell2" x="446" y="210" width="74" height="32" rx="16"/>
+          <rect class="e-cell2" x="536" y="254" width="60" height="27" rx="13.5"/>
+          <rect class="e-cell2" x="440" y="290" width="52" height="24" rx="12"/>
+          <rect class="e-cell2" x="548" y="200" width="46" height="21" rx="10.5"/>
+        </g>
+        <circle class="e-cycle" cx="467" cy="226" r="10"/>
+        <text x="500" y="231" class="e-mol xs accent">RGP</text>
+
+        <text x="505" y="330" class="e-mol sm accent ja-only">ギ酸 HCOOH</text>
+        <text x="505" y="330" class="e-mol sm accent en-only">Formate HCOOH</text>
+
+        <!-- 03 燃料・化学品 -->
+        <path class="e-flow" d="M686 240 H740" marker-end="url(#eArrow)"/>
+        <g filter="url(#eGlow)">
+          <path class="e-prod e-fill" d="M828 174 H872 L894 198 L872 222 H828 L806 198 Z"/>
+          <g class="e-node">
+            <circle cx="828" cy="174" r="3.5"/><circle cx="872" cy="174" r="3.5"/>
+            <circle cx="894" cy="198" r="3.5"/><circle cx="872" cy="222" r="3.5"/>
+            <circle cx="828" cy="222" r="3.5"/><circle cx="806" cy="198" r="3.5"/>
+          </g>
+          <path class="e-prod e-fill" d="M850 242 C 864 258 874 270 874 280 a 24 24 0 0 1 -48 0 c 0 -10 10 -22 24 -38 z"/>
+        </g>
+        <g class="e-spark">
+          <path d="M786 250 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3 z"/>
+          <path d="M916 232 l2.5 7 l7 2.5 l-7 2.5 l-2.5 7 l-2.5 -7 l-7 -2.5 l7 -2.5 z"/>
+        </g>
+
+        <!-- ラベル -->
+        <text x="150" y="392" class="e-label ja-only">排出されたCO₂</text>
+        <text x="150" y="392" class="e-label en-only">Emitted CO₂</text>
+        <text x="150" y="418" class="e-num">01</text>
+
+        <text x="505" y="392" class="e-label ja-only">eBio ジャーファーメンター</text>
+        <text x="505" y="392" class="e-label en-only">eBio fermenter</text>
+        <text x="505" y="418" class="e-num">02</text>
+
+        <text x="850" y="392" class="e-label ja-only">燃料・化学品</text>
+        <text x="850" y="392" class="e-label en-only">Fuels and chemicals</text>
+        <text x="850" y="418" class="e-num">03</text>
+      </svg>
+    </div>
+    <figcaption class="ja-only">工場や自動車から排出されたCO<sub>2</sub>を、再生可能エネルギーの電力でギ酸へ還元する。<strong>同じジャーファーメンターの中で</strong>、還元的グリシン経路をもつ改変大腸菌がそのギ酸を食べて育ち、燃料や化学品をつくる。これが私の目指す<strong>eBio platform</strong>です。<span class="e-hint">（図は横にスクロールできます）</span></figcaption>
+    <figcaption class="en-only" lang="en">CO<sub>2</sub> emitted by factories and cars is reduced to formate by renewable electricity. <strong>Inside the very same fermenter</strong>, engineered <em>E. coli</em> carrying the reductive glycine pathway grows on that formate and makes fuels and chemicals — the <strong>eBio platform</strong> I am building. <span class="e-hint">(scroll the figure sideways)</span></figcaption>
+  </figure>
+
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Education</span><h2 class="vtitle">学歴</h2></div>
+  <div class="hhead en-only"><h2>Education</h2></div>
+  <ul class="entries">
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">東京農工大学 大学院 工学府 生命工学専攻</span>
+        <span class="entry-title en-only">Department of Biotechnology and Life Science, Graduate School of Engineering, Tokyo University of Agriculture and Technology</span>
+        <span class="meta ja-only">2026年4月 – 現在</span>
+        <span class="meta en-only">April 2026 – present</span>
+      </div>
+      <span class="role">M.Eng. (ongoing)</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">東京農工大学 工学部 生命工学科</span>
+        <span class="entry-title en-only">Department of Biotechnology and Life Science, Faculty of Engineering, Tokyo University of Agriculture and Technology</span>
+        <span class="meta ja-only">2024年4月 – 2026年3月</span>
+        <span class="meta en-only">April 2024 – March 2026</span>
+      </div>
+      <span class="role">B.Eng.</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">新居浜工業高等専門学校 生物応用化学科</span>
+        <span class="entry-title en-only">Department of Applied Chemistry and Biotechnology, National Institute of Technology, Niihama College</span>
+        <span class="meta ja-only">2019年4月 – 2024年3月</span>
+        <span class="meta en-only">April 2019 – March 2024</span>
+      </div>
+      <span class="role">Assoc. degree</span>
+    </li>
+  </ul>
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Work</span><h2 class="vtitle">職務経験</h2></div>
+  <div class="hhead en-only"><h2>Work Experience</h2></div>
+  <ul class="entries">
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">NHK関連団体　音響・映像制作</span>
+        <span class="entry-title en-only">Audio and video production, NHK-affiliated organization</span>
+        <span class="meta ja-only">音響・映像制作に従事。あわせてDX推進に取り組み、従来2〜3時間かかっていた作業を自動化して約1分で完了できるようにした（作業時間を99%以上削減）。</span>
+        <span class="meta en-only">Worked on audio and video production, and contributed to the organization's digital transformation by automating a task that used to take 2–3 hours so it now finishes in about one minute — a reduction in working time of more than 99%.</span>
+      </div>
+      <span class="role">media · DX</span>
+    </li>
+  </ul>
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Publications</span><h2 class="vtitle">論文</h2></div>
+  <div class="hhead en-only"><h2>Publications</h2></div>
+  <ul class="entries">
+    <li>
+      <div class="entry">
+        <span class="entry-title"><a href="https://www.biorxiv.org/content/10.64898/2026.03.26.714097v2" target="_blank" rel="noopener noreferrer">Integrated omics analysis reveals reorganization of nitrogen and lipid metabolism in a toluene-degrading bacterium in the gas phase</a></span>
+        <span class="meta">Shori Inoue<sup>†</sup>, Taisei Naobayashi<sup>†</sup>, Kanako Tokiyoshi, Shogo Yoshimoto, Hiroshi Tsugawa, Katsutoshi Hori<br>bioRxiv (preprint), 2026. doi: <a href="https://doi.org/10.64898/2026.03.26.714097" target="_blank" rel="noopener noreferrer">10.64898/2026.03.26.714097</a><br><span class="note"><sup>†</sup><span class="ja-only">共同筆頭著者</span><span class="en-only">These authors contributed equally</span></span></span>
+      </div>
+      <span class="role">co-first author</span>
+    </li>
+  </ul>
+  <p class="caption"><a href="https://scholar.google.com/citations?user=XrrVRmEAAAAJ&amp;hl=ja" target="_blank" rel="noopener noreferrer"><span class="ja-only">Google Scholarで全業績を見る（→）</span><span class="en-only">All publications on Google Scholar (→)</span></a></p>
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Presentations</span><h2 class="vtitle">学会発表</h2></div>
+  <div class="hhead en-only"><h2>Presentations</h2></div>
+  <ul class="entries">
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">CO₂からのバイオモノづくりのためのギ酸資源化大腸菌の代謝工学</span>
+        <span class="entry-title en-only">Metabolic engineering of formate-assimilating <em>E. coli</em> for bio-manufacturing from CO₂</span>
+        <span class="meta ja-only">○直林大生, 田代洋平, 平野伸一, 津川裕司<br>第78回日本生物工学会大会, 2026年9月</span>
+        <span class="meta en-only">T. Naobayashi, Y. Tashiro, S. Hirano, H. Tsugawa<br>The 78th Annual Meeting of the Society for Biotechnology, Japan, September 2026</span>
+      </div>
+      <span class="role">oral</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">気相環境におけるトルエン分解菌の代謝応答の統合オミクス解析</span>
+        <span class="entry-title en-only">Integrated omics analysis of the metabolic response of a toluene-degrading bacterium in a gas-phase environment</span>
+        <span class="meta ja-only">井上翔理, 直林大生, 時吉花菜子, 服部舞子, 吉本将悟, 二井手哲平, 清水浩, 戸谷吉博, 津川裕司, 堀克敏<br>第78回日本生物工学会大会, 2026年9月</span>
+        <span class="meta en-only">S. Inoue, T. Naobayashi, K. Tokiyoshi, M. Hattori, S. Yoshimoto, T. Niide, H. Shimizu, Y. Toya, H. Tsugawa, K. Hori<br>The 78th Annual Meeting of the Society for Biotechnology, Japan, September 2026</span>
+      </div>
+      <span class="role">co-author</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only"><a href="https://www.sbj.or.jp/2026/program/symposium.html" target="_blank" rel="noopener noreferrer">気相微生物反応の特徴を捉える代謝オミクス科学</a></span>
+        <span class="entry-title en-only"><a href="https://www.sbj.or.jp/2026/program/symposium.html" target="_blank" rel="noopener noreferrer">Metabolic omics science for capturing the features of gas-phase microbial reactions</a></span>
+        <span class="meta ja-only">津川裕司, 直林大生, 時吉花菜子, 竹川悠里, 田代洋平, 井上翔理, 吉本将悟, 堀克敏<br>第78回日本生物工学会大会 シンポジウム「気相バイオプロセスの学理構築と微生物の環境適応」, 2026年9月15日</span>
+        <span class="meta en-only">H. Tsugawa, T. Naobayashi, K. Tokiyoshi, Y. Takekawa, Y. Tashiro, S. Inoue, S. Yoshimoto, K. Hori<br>Symposium, The 78th Annual Meeting of the Society for Biotechnology, Japan, 15 September 2026</span>
+      </div>
+      <span class="role">symposium</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">気相環境の細菌細胞における代謝ネットワークの再編成</span>
+        <span class="entry-title en-only">Reorganization of metabolic networks in bacterial cells in a gas-phase environment</span>
+        <span class="meta ja-only">井上翔理, 直林大生, 時吉花菜子, 服部舞子, 吉本将悟, 二井手哲平, 清水浩, 戸谷吉博, 津川裕司, 堀克敏<br>日本化学会 第106春季年会, 2026年3月</span>
+        <span class="meta en-only">S. Inoue, T. Naobayashi, K. Tokiyoshi, M. Hattori, S. Yoshimoto, T. Niide, H. Shimizu, Y. Toya, H. Tsugawa, K. Hori<br>The 106th CSJ Annual Meeting, Chemical Society of Japan, March 2026</span>
+      </div>
+      <span class="role">co-author</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only"><a href="https://jsbba2.bioweb.ne.jp/jsbba2026/index.php?btn2_move=on&amp;name=%C4%BE%CE%D3%C2%E7%C0%B8" target="_blank" rel="noopener noreferrer">CO₂からのモノづくりを可能にするギ酸資化性大腸菌を用いた電気‐バイオ融合システム</a></span>
+        <span class="entry-title en-only"><a href="https://jsbba2.bioweb.ne.jp/jsbba2026/index.php?btn2_move=on&amp;name=%C4%BE%CE%D3%C2%E7%C0%B8" target="_blank" rel="noopener noreferrer">An electro-biological hybrid system using formatotrophic <em>E. coli</em> for chemical production from CO₂</a></span>
+        <span class="meta ja-only">○直林大生, 田代洋平, 平野伸一, 津川裕司<br>日本農芸化学会2026年度大会, 2026年3月</span>
+        <span class="meta en-only">T. Naobayashi, Y. Tashiro, S. Hirano, H. Tsugawa<br>JSBBA Annual Meeting 2026, March 2026</span>
+      </div>
+      <span class="role">oral</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only">高付着性細菌<em>Acinetobacter</em> sp. Tol 5の非糖類基質資化能力の解析</span>
+        <span class="entry-title en-only">Analysis of non-saccharide substrate utilization in the highly adhesive bacterium <em>Acinetobacter</em> sp. Tol 5</span>
+        <span class="meta ja-only">井上翔理, 吉本将悟, 小原優季, 時吉花菜子, 直林大生, 二井手哲平, 清水浩, 戸谷吉博, 津川裕司, 堀克敏<br>第77回日本生物工学会大会, 2025年9月</span>
+        <span class="meta en-only">S. Inoue, S. Yoshimoto, Y. Ohara, K. Tokiyoshi, T. Naobayashi, T. Niide, H. Shimizu, Y. Toya, H. Tsugawa, K. Hori<br>The 77th Annual Meeting of the Society for Biotechnology, Japan, September 2025</span>
+      </div>
+      <span class="role">co-author</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only"><em>Acinetobacter</em> sp. Tol 5の有機酸を炭素源とした際の代謝フラックス分布の評価</span>
+        <span class="entry-title en-only">Evaluation of metabolic flux distribution in <em>Acinetobacter</em> sp. Tol 5 grown on organic acids as carbon sources</span>
+        <span class="meta ja-only">宮本絵里菜, 今田辰海, 寺木遥, 二井手哲平, 井上翔理, 時吉花菜子, 直林大生, 吉本将悟, 津川裕司, 堀克敏 ほか<br>第77回日本生物工学会大会, 2025年9月</span>
+        <span class="meta en-only">E. Miyamoto, T. Imada, H. Teraki, T. Niide, S. Inoue, K. Tokiyoshi, T. Naobayashi, S. Yoshimoto, H. Tsugawa, K. Hori, et al.<br>The 77th Annual Meeting of the Society for Biotechnology, Japan, September 2025</span>
+      </div>
+      <span class="role">co-author</span>
+    </li>
+    <li>
+      <div class="entry">
+        <span class="entry-title ja-only"><a href="https://ms-bio.info/images/2025ws/JCompMS_2025.pdf" target="_blank" rel="noopener noreferrer">CO₂資化バイオ生産プラットフォーム構築に向けたギ酸資化大腸菌のメタボリックエンジニアリング</a></span>
+        <span class="entry-title en-only"><a href="https://ms-bio.info/images/2025ws/JCompMS_2025.pdf" target="_blank" rel="noopener noreferrer">Metabolic engineering of formate-assimilating <em>E. coli</em> toward a CO₂-based bioproduction platform</a></span>
+        <span class="meta ja-only">○直林大生, 津川裕司<br>質量分析インフォマティクス研究会 第10回ワークショップ, 2025年8月</span>
+        <span class="meta en-only">T. Naobayashi, H. Tsugawa<br>10th Workshop, Mass Spectrometry Informatics Research Group, August 2025</span>
+      </div>
+      <span class="role">poster</span>
+    </li>
+  </ul>
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Skills</span><h2 class="vtitle">研究スキル</h2></div>
+  <div class="hhead en-only"><h2>Research Skills</h2></div>
+  <div class="skillgrid">
+    <article class="skillcard">
+      <svg class="skillicon" viewBox="0 0 48 48" aria-hidden="true">
+        <g transform="rotate(-20 22 32)">
+          <rect x="9" y="25.5" width="26" height="13" rx="6.5"/>
+          <path d="M9 29 c -3 -1.5 -5 1 -8 -0.5"/>
+          <path d="M8.5 35 c -3 1.5 -5 -1 -8 0.5"/>
+        </g>
+        <g class="acc">
+          <circle cx="34" cy="14" r="6"/>
+          <path d="M40 14 H43 M38.2 18.2 L40.4 20.4 M34 20 V23 M29.8 18.2 L27.6 20.4 M28 14 H25 M29.8 9.8 L27.6 7.6 M34 8 V5 M38.2 9.8 L40.4 7.6"/>
+          <circle cx="34" cy="14" r="2.2"/>
+        </g>
+      </svg>
+      <div>
+        <h3 class="ja-only">ゲノム編集・代謝工学・酵素工学</h3>
+        <h3 class="en-only">Genome editing, metabolic and enzyme engineering</h3>
+        <p class="cat">Strain engineering</p>
+      </div>
+    </article>
+
+    <article class="skillcard">
+      <svg class="skillicon" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M13 15 L24 9 L36 17 M13 15 L18 30 M36 17 L32 34 M18 30 L32 34 M18 30 L24 42 M32 34 L24 42"/>
+        <circle class="node" cx="13" cy="15" r="3.4"/>
+        <circle class="node" cx="24" cy="9" r="3.4"/>
+        <circle class="node" cx="36" cy="17" r="3.4"/>
+        <circle class="node acc-fill" cx="18" cy="30" r="3.4"/>
+        <circle class="node" cx="32" cy="34" r="3.4"/>
+        <circle class="node acc-fill" cx="24" cy="42" r="3.4"/>
+      </svg>
+      <div>
+        <h3 class="ja-only">メタボロミクス・リピドミクス・オミックス解析</h3>
+        <h3 class="en-only">Metabolomics, lipidomics, omics analysis</h3>
+        <p class="cat">Metabolic analysis</p>
+      </div>
+    </article>
+
+    <article class="skillcard">
+      <svg class="skillicon" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M7 40 H41 M7 40 V10"/>
+        <path class="acc" d="M9 40 L13 40 C15 40 15.4 13 17.5 13 C19.6 13 20 40 22 40 L25.5 40 C27.3 40 27.7 23 29.5 23 C31.3 23 31.7 40 33.5 40 L41 40"/>
+      </svg>
+      <div>
+        <h3 class="ja-only">LC-MS/MS</h3>
+        <h3 class="en-only">LC-MS/MS</h3>
+        <p class="cat">Analytical chemistry</p>
+      </div>
+    </article>
+
+    <article class="skillcard">
+      <svg class="skillicon" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M17 13 L7 24 L17 35"/>
+        <path d="M31 13 L41 24 L31 35"/>
+        <path class="acc" d="M27 10 L21 38"/>
+      </svg>
+      <div>
+        <h3 class="ja-only">Python・R・HTML</h3>
+        <h3 class="en-only">Python, R, HTML</h3>
+        <p class="cat">Data processing</p>
+      </div>
+    </article>
+  </div>
+
+
+  <hr class="rule">
+  <div class="vhead ja-only"><span class="vlabel">Links</span><h2 class="vtitle">リンク</h2></div>
+  <div class="hhead en-only"><h2>Links</h2></div>
+  <ul class="links">
+    <li><a href="https://scholar.google.com/citations?user=XrrVRmEAAAAJ&amp;hl=ja" target="_blank" rel="me noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 0 9.3l4.9 3.2a7.5 7.5 0 0 1 14.2 0L24 9.3z"/><circle cx="12" cy="16.5" r="6"/></svg><span class="lbl">Scholar</span></a></li>
+    <li><a href="https://orcid.org/0009-0009-7755-163X" target="_blank" rel="me noopener noreferrer" aria-label="ORCID" title="ORCID">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0a12 12 0 1 1 0 24 12 12 0 0 1 0-24zM7 9.6v8.6h1.8V9.6zm0-3.2a1.1 1.1 0 1 0 2.2 0 1.1 1.1 0 0 0-2.2 0zm4 3.2v8.6h3.1c2.9 0 4.6-1.8 4.6-4.3s-1.7-4.3-4.6-4.3zm1.8 1.6h1.2c1.9 0 2.9 1.1 2.9 2.7s-1 2.7-2.9 2.7h-1.2z"/></svg><span class="lbl">ORCID</span></a></li>
+    <li><a href="https://github.com/TaiseiNaobayashi" target="_blank" rel="me noopener noreferrer" aria-label="GitHub" title="GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg><span class="lbl">GitHub</span></a></li>
+    <li><a href="https://www.researchgate.net/profile/Taisei-Naobayashi" target="_blank" rel="me noopener noreferrer" aria-label="ResearchGate" title="ResearchGate">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="0" y="0" width="24" height="24" rx="3"/><text x="12" y="16.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">R<tspan font-size="7" dy="-4">G</tspan></text></svg><span class="lbl">ResearchGate</span></a></li>
+    <li><a href="https://systemsomicslab.github.io/member/" target="_blank" rel="noopener noreferrer" aria-label="Systems Omics Lab" title="Systems Omics Lab">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 1h8v2h-1.5v6.2l6.8 11.3A2.3 2.3 0 0 1 19.3 24H4.7a2.3 2.3 0 0 1-2-3.5l6.8-11.3V3H8zm3.5 2v6.8L8.6 14.7h6.8l-2.9-4.9V3z"/></svg><span class="lbl">Lab</span></a></li>
+    <li><a href="mailto:naobayashi.taisei.8n@kyoto-u.ac.jp" aria-label="Email (Kyoto University): naobayashi.taisei.8n@kyoto-u.ac.jp" title="naobayashi.taisei.8n@kyoto-u.ac.jp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm.4 2.3V7l9.6 6.2L21.6 7v-.7zM2.4 9.6v8.1h19.2V9.6L12 15.8z"/></svg><span class="lbl">Email · Kyoto</span></a></li>
+    <li><a href="mailto:n-thai0930@st.go.tuat.ac.jp" aria-label="Email (Tokyo University of Agriculture and Technology): n-thai0930@st.go.tuat.ac.jp" title="n-thai0930@st.go.tuat.ac.jp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm.4 2.3V7l9.6 6.2L21.6 7v-.7zM2.4 9.6v8.1h19.2V9.6L12 15.8z"/></svg><span class="lbl">Email · TUAT</span></a></li>
+  </ul>
+
+  <footer>
+    <span>直林大生 Taisei Naobayashi</span>
+    <span>©2026</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll(".langswitch button");
+
+  function apply(lang) {
+    root.classList.toggle("en", lang === "en");
+    root.setAttribute("lang", lang === "en" ? "en" : "ja");
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.dataset.lang); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  if (!saved) {
+    saved = (navigator.language || "ja").toLowerCase().indexOf("ja") === 0 ? "ja" : "en";
+  }
+  apply(saved);
+})();
+</script>
+</body>
+</html>
